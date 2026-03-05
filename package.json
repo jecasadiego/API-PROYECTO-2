@@ -1,0 +1,21 @@
+{
+  "name": "api-proyecto-2",
+  "version": "1.0.0",
+  "description": "API basica para gestion de peliculas y series",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test:smoke": "node scripts/test-endpoints.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "morgan": "^1.10.1",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  }
+}
