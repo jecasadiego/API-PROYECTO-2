@@ -1,4 +1,4 @@
-﻿# API PROYECTO 2
+﻿# API PROYECTO
 
 API REST para gestion de peliculas y series usando Node.js, Express, Sequelize y SQLite.
 
