@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: api-proyecto-2
+    runtime: node
+    plan: free
+    region: virginia
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: CORS_ORIGIN
+        sync: false

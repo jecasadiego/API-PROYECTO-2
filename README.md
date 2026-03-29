@@ -74,6 +74,34 @@ Base URL local:
 http://localhost:3000/api/v1
 ```
 
+## Deploy en Render
+
+La API puede desplegarse como un `Web Service` de Render usando el archivo `render.yaml` incluido en este repositorio o creando el servicio manualmente desde el panel.
+
+Configuracion recomendada:
+
+- Runtime: `Node`
+- Build command: `npm install`
+- Start command: `npm start`
+- Health check path: `/api/v1/health`
+
+Variables de entorno utiles:
+
+- `CORS_ORIGIN`: URL del frontend en produccion. Puedes definir una o varias separadas por comas.
+- `SQLITE_STORAGE_PATH`: ruta del archivo SQLite si quieres cambiar la ubicacion por defecto.
+
+Ejemplo:
+
+```txt
+CORS_ORIGIN=https://tu-frontend.onrender.com
+SQLITE_STORAGE_PATH=./data/database.sqlite
+```
+
+Importante:
+
+- En Render Free, el filesystem local no debe considerarse persistente para una base SQLite. La API funciona para demo, pero los datos pueden reiniciarse tras redeploys o reinicios.
+- Si necesitas conservar informacion real, migra la base de datos a PostgreSQL o usa un disco persistente de Render en un plan compatible.
+
 ## Pruebas
 
 ### Smoke test automatizado
